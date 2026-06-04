@@ -291,10 +291,10 @@ const LANG={
     voiceFound:n=>"✓ Italienische Stimme gefunden: "+n, voiceUnsupported:"Dieser Browser unterstützt keine Sprachausgabe.",
     favAdd:"Zu Favoriten hinzugefügt ❤", favRem:"Aus Favoriten entfernt", favClear:"Favoriten gelöscht", noVoice:"Sprachausgabe nicht verfügbar",
     noResults:"Keine Sätze gefunden.", favEmpty:"Noch keine Favoriten.", favHint:"Tippe bei einem Satz auf das Herz.",
-    wGreet:'Ciao <em>Lotti!</em>',
-    wP1:'Diese kleine App habe ich <strong>für dich</strong> gemacht – damit unser <strong>Italienurlaub</strong> noch schöner und entspannter wird.',
-    wP2:'Tipp dich einfach durch die Sätze, hör dir die Aussprache an – und schon plauderst du wie eine Einheimische. ☕',
-    wSign:"In Liebe, Dirk", wBtn:"Los geht’s! · Andiamo 🇮🇹"
+    wGreet:'Ciao <em>Italia!</em>',
+    wP1:'Dein persönlicher Sprachbegleiter für <strong>Italien</strong> – ob Urlaub, Städtetrip oder Alltag.',
+    wP2:'Über 90 Sätze in 13 Kategorien – mit Übersetzung, Aussprache und Lernmodus. Einfach antippen und loslegen! 🇮🇹',
+    wSign:"Mit ♥ von Dirk erstellt – im Caffè del Teatro, Genova ☕", wBtn:"Los geht’s! · Andiamo 🇮🇹"
   },
   es:{
     searchPlaceholder:"Buscar frase o palabra …",
@@ -317,10 +317,10 @@ const LANG={
     voiceFound:n=>"✓ Voz italiana encontrada: "+n, voiceUnsupported:"Este navegador no admite la lectura de voz.",
     favAdd:"Añadido a favoritos ❤", favRem:"Eliminado de favoritos", favClear:"Favoritos borrados", noVoice:"Lectura de voz no disponible",
     noResults:"No se encontraron frases.", favEmpty:"Aún no hay favoritos.", favHint:"Toca el corazón en una frase.",
-    wGreet:'Ciao <em>Lotti!</em>',
-    wP1:'Esta pequeña app la he hecho <strong>para ti</strong> – para que nuestras <strong>vacaciones en Italia</strong> sean aún más bonitas y relajadas.',
-    wP2:'Solo toca las frases, escucha la pronunciación – y charlarás como una local. ☕',
-    wSign:"Con amor, Dirk", wBtn:"¡Vamos! · Andiamo 🇮🇹"
+    wGreet:'Ciao <em>Italia!</em>',
+    wP1:'Tu guía de idioma personal para <strong>Italia</strong> – para viajes, vacaciones o el día a día.',
+    wP2:'Más de 90 frases en 13 categorías – con traducción, pronunciación y modo práctica. ¡Solo toca y empieza! 🇮🇹',
+    wSign:"Hecha con ♥ por Dirk – en el Caffè del Teatro, Génova ☕", wBtn:"¡Vamos! · Andiamo 🇮🇹"
   }
 };
 
@@ -688,7 +688,8 @@ function fillWelcome(){
   document.getElementById("wGreet").innerHTML=L().wGreet;
   document.getElementById("wP1").innerHTML=L().wP1;
   document.getElementById("wP2").innerHTML=L().wP2;
-  document.getElementById("wSign").textContent=L().wSign;
+  const sign=document.getElementById("wSign");
+  sign.textContent=L().wSign||""; sign.style.display=L().wSign?"":"none";
   document.getElementById("welcomeClose").textContent=L().wBtn;
 }
 function closeWelcome(){welcome.classList.remove("show");}
